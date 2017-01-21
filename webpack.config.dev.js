@@ -16,13 +16,22 @@ plugins:[
     new webpack.optimize.OccurenceOrderPlugin()
 ],
 module:{
-    loaders:[{
-        test:/\.js$/,
-        include:path.join(__dirname,"client"),
-        loaders:['react-hot','babel']
-    }]
+    loaders:[
+        {
+            test:/\.js$/,
+            include:path.join(__dirname,"client"),
+            loaders:['react-hot','babel']
+        },
+     // CSS
+        { 
+            test: /\.styl$/, 
+            include: path.join(__dirname, 'static'),
+            loader: 'style-loader!css-loader!stylus-loader'
+        }
+    ]
+
 },
 resolve:{
-    extensions:['','.js']
+    extensions:['','.js','.styl']
 }
 }

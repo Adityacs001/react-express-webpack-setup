@@ -1,10 +1,16 @@
 import React from "react";
 import Message from "./Message";
-export default class App extends React.Component{
-    render(){
+ 
+import LoginContainer from "./Login/LoginContainer";
+import MenuBar from "./MenuBar/MenuBar";
+
+export default class App extends React.Component {
+    render() {
         return (
-                <Message/>
-            );   
+            <div className="container">
+                <MenuBar/>                 
+               {this.props.children}
+            </div>
+        );
     }
 }
- 
